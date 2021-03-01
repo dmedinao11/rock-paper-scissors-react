@@ -1,29 +1,29 @@
 .score {
-	align-items: center;
-	border: 3px solid #5c6d87;
-	border-radius: 15px;
-	display: flex;
-	padding: 1rem 1.5rem;
+  align-items: center;
+  border: 3px solid #5c6d87;
+  border-radius: 15px;
+  display: flex;
+  padding: 1rem 1.5rem;
 }
 
 .score__wrapper {
-	align-items: center;
-	border-radius: 10px;
-	background-color: #fdfdfd;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	margin-left: auto;
-	min-width: 9rem;
-	padding: 1rem;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: auto;
+  min-width: 9rem;
+  padding: 1rem;
 }
 
 .score__title {
-	color: #4e5591;
-	letter-spacing: 2px;
+  color: #4e5591;
+  letter-spacing: 2px;
 }
 
 .score__number {
-	color: #58546b;
-	font-size: 3rem;
+  color: #58546b;
+  font-size: 3rem;
 }
