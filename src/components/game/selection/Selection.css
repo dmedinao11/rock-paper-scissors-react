@@ -1,0 +1,5 @@
+.selection {
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+}

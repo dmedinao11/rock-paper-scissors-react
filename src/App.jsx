@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 import { Score } from "./components/score/Score";
-import Game from "./components/Game";
+import Game from "./components/game/Game";
 
 class App extends Component {
   render() {
