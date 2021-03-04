@@ -1,5 +1,11 @@
 .selection {
-  border: 1px solid white;
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 8rem;
+	position: relative;
+}
+
+.selection__bg {
+	height: 14rem;
 }

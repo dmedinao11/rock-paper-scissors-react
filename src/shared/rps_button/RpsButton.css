@@ -1,0 +1,43 @@
+.rpsButton {
+	background-image: radial-gradient(130px circle at 50% 63%, #dcdcdc 60%, #bcc1d7 40%);
+	border-radius: 50%;
+	border: 1.2rem solid;
+	height: 11.3rem;
+	width: 11.3rem;
+}
+
+.rpsButton--paper {
+	border-color: #5672f7;
+	box-shadow: 0 7px 0 #2945c2;
+}
+
+.rpsButton--paper--selection {
+	position: absolute;
+	top: calc(-45% + 1.2rem);
+	left: calc(-50% + 1.2rem);
+}
+
+.rpsButton--rock {
+	border-color: #dd3755;
+	box-shadow: 0 7px 0 #9d1630;
+}
+
+.rpsButton--rock--selection {
+	position: absolute;
+	bottom: calc(-45% + 1.2rem);
+}
+
+.rpsButton--scissor {
+	border-color: #eda722;
+	box-shadow: 0 7px 0 #c76c1a;
+}
+
+.rpsButton--scissor--selection {
+	position: absolute;
+	top: calc(-45% + 1.2rem);
+	right: calc(-50% + 1.2rem);
+}
+
+.rpsButton__img {
+	height: 4.3rem;
+}
