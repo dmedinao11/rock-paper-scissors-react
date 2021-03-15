@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "animate.css";
 
 import { Score } from "./components/score/Score";
 import Game from "./components/game/Game";
