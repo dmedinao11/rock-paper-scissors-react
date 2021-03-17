@@ -5,19 +5,26 @@ import triangle from "../../../../images/bg-triangle.svg";
 import { buttons } from "../../../global/constants";
 
 export const Selection = (props) => {
-	const buttonsDom = buttons.map(({ buttonClass, img }, key) => {
+	const buttonsDom = buttons.map(({ buttonClass, img }, indx) => {
 		return (
 			<RpsButton
-				key={key}
+				key={indx}
+				index={indx}
 				img={img}
-				buttonClass={buttonClass}
+				buttonClass={`${buttonClass}`}
+				parentClass="rpsButton--selection"
 				styleModifier="--selection"
 				onUserSelecion={props.onUserSelection}
 			/>
 		);
 	});
+
+	const animationClasses = props.changeToResult
+		? " animate__animated animate__fadeOutLeft"
+		: "";
+
 	return (
-		<section className="selection">
+		<section className={"selection" + animationClasses}>
 			<img src={triangle} className="selection__bg" alt="triangle"></img>
 			{buttonsDom}
 		</section>

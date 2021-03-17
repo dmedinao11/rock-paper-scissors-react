@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
 
+:root {
+	--animate-duration: 600ms;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: "Barlow Semi Condensed", sans-serif;
@@ -24,6 +28,7 @@ main {
 	min-height: 100vh;
 	min-width: 44rem;
 	padding: 3rem 0;
+	overflow: hidden;
 }
 
 .rules__button {

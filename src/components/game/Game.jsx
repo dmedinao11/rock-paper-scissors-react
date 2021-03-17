@@ -1,25 +1,30 @@
 import React, { Component } from "react";
 import { Selection } from "./selection/Selection";
-import { Result } from "./result/Result";
+import Result from "./result/Result";
 
 class Game extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { isSelecting: true };
+		this.state = { isSelecting: true, onChangeToResult: false };
 		this.handleUserSelection = this.handleUserSelection.bind(this);
 	}
 
 	render() {
 		return this.state.isSelecting ? (
-			<Selection onUserSelection={this.handleUserSelection} />
+			<Selection
+				onUserSelection={this.handleUserSelection}
+				changeToResult={this.state.onChangeToResult}
+			/>
 		) : (
-			<Result />
+			<Result selectedButton={1} />
 		);
 	}
 
-	handleUserSelection(item) {
-		this.setState({ isSelecting: false });
-		console.log(item);
+	handleUserSelection(itemIndex) {
+		this.setState({ onChangeToResult: true });
+		setTimeout(() => this.setState({ isSelecting: false }), 600);
+
+		console.log(itemIndex);
 	}
 }
 
