@@ -2,13 +2,14 @@ import React from "react";
 import "./RpsButton.css";
 
 const RpsButton = (props) => {
-	return (
-		<button
-			className={`rpsButton ${props.parentClass} ${props.buttonClass} ${props.buttonClass}${props.styleModifier}`}
-			onClick={() => props.onUserSelecion(props.buttonClass)}>
-			<img src={props.img} className="rpsButton__img"></img>
-		</button>
-	);
+  return (
+    <span
+      className={`rpsButton ${props.parentClass} ${props.buttonClass} ${props.buttonClass}${props.styleModifier}`}
+      onClick={() => props.onUserSelecion(props.buttonClass)}
+    >
+      <img src={props.img} className="rpsButton__img" alt="rpsItem"></img>
+    </span>
+  );
 };
 
 export default RpsButton;

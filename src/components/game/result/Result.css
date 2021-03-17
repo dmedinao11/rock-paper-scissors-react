@@ -1,45 +1,48 @@
 .result {
-	display: flex;
-	width: 100%;
-	margin: auto 0;
-	justify-content: space-around;
+  display: flex;
+  width: 100%;
+  margin: auto 0;
+  justify-content: space-around;
 }
 
 .result__wrapper {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .result__subtitle {
-	color: white;
-	font-size: 1.3rem;
-	letter-spacing: 3px;
-	text-align: center;
-	margin-bottom: 5rem;
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
 .result__buttonWrapper {
-	width: 190px;
-	height: 190px;
-	border-radius: 50%;
-	background-color: #182341;
-	position: relative;
-	overflow: hidden;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background-color: #182341;
+  position: relative;
+  overflow: hidden;
 }
 
 .result__buttonWrapper--user {
-	animation-name: userEntranceContainer;
-	animation-duration: 0s;
-	animation-fill-mode: forwards;
-	animation-delay: 350ms;
+  animation-name: userEntranceContainer;
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-delay: 950ms;
+}
+
+.result__buttonWrapper--house {
 }
 
 @keyframes userEntranceContainer {
-	from {
-		overflow: hidden;
-	}
+  from {
+    overflow: hidden;
+  }
 
-	to {
-		overflow: visible;
-	}
+  to {
+    overflow: visible;
+  }
 }
