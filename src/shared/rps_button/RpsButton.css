@@ -1,81 +1,85 @@
 .rpsButton {
-  background-image: radial-gradient(
-    130px circle at 50% 63%,
-    #dcdcdc 60%,
-    #bcc1d7 40%
-  );
-  border-radius: 50%;
-  border: 1.2rem solid;
-  position: absolute;
-  display: flex;
+	background-image: radial-gradient(130px circle at 50% 63%, #dcdcdc 60%, #bcc1d7 40%);
+	border-radius: 50%;
+	border: 1.2rem solid;
+	position: absolute;
+	display: flex;
 }
 
 .rpsButton--selection {
-  height: 11.3rem;
-  width: 11.3rem;
-  cursor: pointer;
+	height: 11.3rem;
+	width: 11.3rem;
+	cursor: pointer;
 }
 
 .rpsButton--result {
-  width: 100%;
-  height: 100%;
-  cursor: default;
+	width: 100%;
+	height: 100%;
+	cursor: default;
 }
 
 .rpsButton--result--user {
-  z-index: 10;
-  bottom: -100%;
-  animation-name: userEntrance;
-  animation-delay: 600ms;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+	z-index: 10;
+	bottom: -100%;
+	animation-name: userEntrance;
+	animation-delay: 600ms;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.rpsButton--result--allButtons {
+	position: relative;
+	flex-shrink: 0;
+	width: 190px;
+	height: 190px;
+	transform: scale(0.8);
 }
 
 .rpsButton--paper {
-  border-color: #5672f7;
-  box-shadow: 0 7px 0 #2945c2;
+	border-color: #5672f7;
+	box-shadow: 0 7px 0 #2945c2;
 }
 
 .rpsButton--paper--selection {
-  top: calc(-45% + 1.2rem);
-  left: calc(-50% + 1.2rem);
+	top: calc(-45% + 1.2rem);
+	left: calc(-50% + 1.2rem);
 }
 
 .rpsButton--rock {
-  border-color: #dd3755;
-  box-shadow: 0 7px 0 #9d1630;
+	border-color: #dd3755;
+	box-shadow: 0 7px 0 #9d1630;
 }
 
 .rpsButton--rock--selection {
-  bottom: calc(-45% + 1.2rem);
+	bottom: calc(-45% + 1.2rem);
 }
 
 .rpsButton--scissor {
-  border-color: #eda722;
-  box-shadow: 0 7px 0 #c76c1a;
+	border-color: #eda722;
+	box-shadow: 0 7px 0 #c76c1a;
 }
 
 .rpsButton--scissor--selection {
-  top: calc(-45% + 1.2rem);
-  right: calc(-50% + 1.2rem);
+	top: calc(-45% + 1.2rem);
+	right: calc(-50% + 1.2rem);
 }
 
 .rpsButton__img {
-  height: 50%;
-  margin: auto;
+	height: 50%;
+	margin: auto;
 }
 
 @keyframes userEntrance {
-  0% {
-    bottom: -100%;
-  }
-  70% {
-    bottom: 0;
-    transform: scale(1);
-  }
-  100% {
-    bottom: 0;
-    transform: scale(1.2);
-  }
+	0% {
+		bottom: -100%;
+	}
+	70% {
+		bottom: 0;
+		transform: scale(1);
+	}
+	100% {
+		bottom: 0;
+		transform: scale(1.2);
+	}
 }
