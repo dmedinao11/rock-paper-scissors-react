@@ -28,7 +28,6 @@ main {
 	min-height: 100vh;
 	min-width: 44rem;
 	padding: 3rem 0;
-	overflow: hidden;
 }
 
 .rules__button {

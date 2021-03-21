@@ -8,6 +8,8 @@
 .result__wrapper {
 	display: flex;
 	flex-direction: column;
+	transition: transform 0.3s;
+	position: static;
 }
 
 .result__subtitle {
@@ -28,30 +30,47 @@
 }
 
 .result__buttonWrapper--user {
-	animation-name: userEntranceContainer;
-	animation-duration: 0s;
-	animation-fill-mode: forwards;
-	animation-delay: 950ms;
+	animation: entranceContainer 0s linear 950ms 1 normal forwards;
 }
 
-/* .result__buttonWrapper--house {
-	overflow: visible;
-} */
+.result__buttonWrapper--house {
+	animation: entranceContainer 0s linear 1.9s 1 normal forwards;
+}
 
 .result__allButtons {
 	position: absolute;
 	display: flex;
 	height: 130px;
 	top: calc(50% - 95px);
-	left: 100%;
-	animation-delay: 1s;
-	animation-name: buttonsCarrousel;
-	animation-iteration-count: 5;
-	animation-duration: 0.3s;
-	animation-fill-mode: forwards;
+	animation: buttonsCarrousel 0.2s linear 1.1s 4 normal forwards;
 }
 
-@keyframes userEntranceContainer {
+.result__again {
+	align-self: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	z-index: 20;
+	animation-delay: 0.3s;
+}
+
+.result__againTitle {
+	letter-spacing: 3px;
+	color: white;
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+}
+
+.result__againButton {
+	letter-spacing: 2px;
+	text-align: center;
+	background-color: white;
+	padding: 15px;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+@keyframes entranceContainer {
 	from {
 		overflow: hidden;
 	}
@@ -66,6 +85,6 @@
 		transform: translateX(0);
 	}
 	100% {
-		transform: translateX(calc(-190px * 3));
+		transform: translateX(calc(-190px * 2));
 	}
 }

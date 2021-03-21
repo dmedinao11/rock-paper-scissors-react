@@ -21,11 +21,7 @@
 .rpsButton--result--user {
 	z-index: 10;
 	bottom: -100%;
-	animation-name: userEntrance;
-	animation-delay: 600ms;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-fill-mode: forwards;
+	animation: userEntrance 0.5s linear 600ms 1 normal forwards;
 }
 
 .rpsButton--result--allButtons {
@@ -34,6 +30,10 @@
 	width: 190px;
 	height: 190px;
 	transform: scale(0.8);
+}
+
+.rpsButton--result--house {
+	animation: houseEntrance 0.2s linear 0s 1 normal forwards;
 }
 
 .rpsButton--paper {
@@ -80,6 +80,15 @@
 	}
 	100% {
 		bottom: 0;
+		transform: scale(1.2);
+	}
+}
+
+@keyframes houseEntrance {
+	from {
+		transform: scale(0.8);
+	}
+	to {
 		transform: scale(1.2);
 	}
 }

@@ -19,9 +19,11 @@ export const Selection = (props) => {
 		);
 	});
 
-	const animationClasses = props.changeToResult
-		? " animate__animated animate__fadeOutLeft"
-		: "";
+	const animationClasses = props.firstSelectionEntrance
+		? ""
+		: props.changeToResult
+		? " animate__animated animate__zoomOut"
+		: " animate__animated animate__zoomIn";
 
 	return (
 		<section className={"selection" + animationClasses}>

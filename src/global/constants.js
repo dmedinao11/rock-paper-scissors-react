@@ -4,15 +4,24 @@ import scissors from "../../images/icon-scissors.svg";
 
 export const buttons = [
 	{
-		img: paper,
-		buttonClass: "rpsButton--paper"
+		img: rock,
+		buttonClass: "rpsButton--rock",
+		id: 0
 	},
 	{
-		img: rock,
-		buttonClass: "rpsButton--rock"
+		img: paper,
+		buttonClass: "rpsButton--paper",
+		id: 1
 	},
 	{
 		img: scissors,
-		buttonClass: "rpsButton--scissor"
+		buttonClass: "rpsButton--scissor",
+		id: 2
 	}
 ];
+
+export const gameWinnerMap = {
+	0: "2",
+	1: "0",
+	2: "1"
+};

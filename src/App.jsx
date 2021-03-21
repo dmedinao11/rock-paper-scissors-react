@@ -9,23 +9,14 @@ import RulesModal from "./shared/rules_modal/RulesModal";
 class App extends Component {
 	constructor() {
 		super();
-		this.state = { rulesModalISOpen: false };
+		this.state = { rulesModalISOpen: false, overflow: false };
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
+		this.handleToggleOverflow = this.handleToggleOverflow.bind(this);
 	}
-	render() {
-		return (
-			<main>
-				<Score score={100000} />
-				<Game />
-				<button className="rules__button" onClick={this.handleOpenModal}>
-					RULES
-				</button>
-				<RulesModal
-					onCloseClick={this.handleCloseModal}
-					isOpen={this.state.rulesModalISOpen}></RulesModal>
-			</main>
-		);
+
+	handleIncrementScore() {
+		console.warn("Incremented!");
 	}
 
 	handleCloseModal() {
@@ -34,6 +25,33 @@ class App extends Component {
 
 	handleOpenModal() {
 		this.setState({ rulesModalISOpen: true });
+	}
+
+	handleToggleOverflow(show) {
+		return () => {
+			this.setState({ overflow: show });
+		};
+	}
+
+	render() {
+		const mainStyles = { overflowX: this.state.overflow ? "visible" : "hidden" };
+
+		return (
+			<main style={mainStyles} className="animate__animated animate__fadeIn">
+				<Score score={100000} />
+				<Game
+					showOverflow={this.handleToggleOverflow(true)}
+					hideOverflow={this.handleToggleOverflow(false)}
+					incrementScore={this.handleIncrementScore}
+				/>
+				<button className="rules__button" onClick={this.handleOpenModal}>
+					RULES
+				</button>
+				<RulesModal
+					onCloseClick={this.handleCloseModal}
+					isOpen={this.state.rulesModalISOpen}></RulesModal>
+			</main>
+		);
 	}
 }
 
