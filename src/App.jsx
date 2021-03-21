@@ -5,18 +5,26 @@ import "animate.css";
 import { Score } from "./components/score/Score";
 import Game from "./components/game/Game";
 import RulesModal from "./shared/rules_modal/RulesModal";
+import { ScoreController } from "./global/utils";
 
 class App extends Component {
 	constructor() {
 		super();
-		this.state = { rulesModalISOpen: false, overflow: false };
+		this.scoreController = new ScoreController();
+		this.state = {
+			rulesModalISOpen: false,
+			overflow: false,
+			score: this.scoreController.score
+		};
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
 		this.handleToggleOverflow = this.handleToggleOverflow.bind(this);
+		this.handleIncrementScore = this.handleIncrementScore.bind(this);
 	}
 
 	handleIncrementScore() {
-		console.warn("Incremented!");
+		this.scoreController.increment();
+		this.setState({ score: this.scoreController.score });
 	}
 
 	handleCloseModal() {
@@ -38,7 +46,7 @@ class App extends Component {
 
 		return (
 			<main style={mainStyles} className="animate__animated animate__fadeIn">
-				<Score score={100000} />
+				<Score score={this.state.score} />
 				<Game
 					showOverflow={this.handleToggleOverflow(true)}
 					hideOverflow={this.handleToggleOverflow(false)}

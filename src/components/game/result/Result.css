@@ -51,7 +51,7 @@
 	display: flex;
 	flex-direction: column;
 	z-index: 20;
-	animation-delay: 0.3s;
+	animation-delay: 0.5s;
 }
 
 .result__againTitle {
