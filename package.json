@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"homepage": "http://dmedinao11.github.io/rock-paper-scissors-react",
+	"homepage": "https://dmedinao11.github.io/rock-paper-scissors-react",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "webpack serve",
