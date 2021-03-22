@@ -12,23 +12,39 @@
 }
 
 .modal {
-	display: flex;
-	flex-direction: column;
-}
-
-.modal__header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 2rem;
+	display: grid;
+	grid-template-areas:
+		"title close"
+		"img img";
+	grid-row-gap: 3rem;
 }
 
 .modal__title {
 	font-size: 2rem;
 	color: #3c425e;
 	cursor: default;
+	grid-area: title;
 }
 
 .modal__button {
 	cursor: pointer;
+	grid-area: close;
+	margin: auto 0 auto auto;
+}
+
+.modal__rulesImg {
+	grid-area: img;
+}
+
+@media only screen and (max-width: 590px) {
+	.modal {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		height: 100%;
+	}
+	.modal__button {
+		margin: 0;
+	}
 }

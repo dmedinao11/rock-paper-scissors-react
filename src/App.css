@@ -28,6 +28,7 @@ main {
 	min-height: 100vh;
 	min-width: 44rem;
 	padding: 3rem 0;
+	position: relative;
 }
 
 .rules__button {
@@ -41,6 +42,7 @@ main {
 	right: 1rem;
 	padding: 10px 40px;
 	position: fixed;
+	width: 130px;
 }
 
 button:hover {
@@ -49,4 +51,21 @@ button:hover {
 
 button:focus {
 	outline: none;
+}
+
+@media only screen and (max-width: 780px) {
+	main {
+		min-width: 550px;
+	}
+}
+@media only screen and (max-width: 590px) {
+	main {
+		min-width: 340px;
+		padding: 1.5rem 0;
+	}
+
+	.rules__button {
+		left: calc(50% - 65px);
+		right: unset;
+	}
 }

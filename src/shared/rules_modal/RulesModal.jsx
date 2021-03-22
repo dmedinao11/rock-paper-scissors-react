@@ -12,6 +12,8 @@ class RulesModal extends Component {
 	}
 
 	render() {
+		const inMobileView = window.matchMedia("(max-width: 590px)").matches;
+
 		const modalStyles = {
 			overlay: {
 				backgroundColor: "rgba(0,0,0,0.5)",
@@ -22,20 +24,20 @@ class RulesModal extends Component {
 				margin: "auto",
 				overflow: "hidden",
 				padding: "2.2rem",
-				borderRadius: "10px"
+				borderRadius: inMobileView ? "0" : "10px",
+				width: inMobileView ? "100%" : "auto",
+				height: inMobileView ? "100%" : "auto"
 			}
 		};
 
 		return (
 			<Modal isOpen={this.props.isOpen} style={modalStyles}>
 				<div className="modal">
-					<section className="modal__header">
-						<h2 className="modal__title">RULES</h2>
-						<a onClick={this.props.onCloseClick} className="modal__button">
-							<img className="modal__closeImg" src={closeIcon}></img>
-						</a>
-					</section>
+					<h2 className="modal__title">RULES</h2>
 					<img className="modal__rulesImg" src={rulesImg}></img>
+					<a onClick={this.props.onCloseClick} className="modal__button">
+						<img className="modal__closeImg" src={closeIcon}></img>
+					</a>
 				</div>
 			</Modal>
 		);

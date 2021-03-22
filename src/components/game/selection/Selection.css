@@ -9,3 +9,15 @@
 .selection__bg {
 	height: 14rem;
 }
+
+@media only screen and (max-width: 780px) {
+	.selection__bg {
+		height: 10rem;
+	}
+}
+
+@media only screen and (max-width: 590px) {
+	.selection {
+		margin: auto;
+	}
+}

@@ -26,12 +26,26 @@ class Result extends Component {
 	}
 
 	handleSelectionEnd() {
-		this.props.showOverflow();
-		const translate = 40;
-		this.userWrapper.current.style.transform = `translateX(-${translate}%)`;
-		this.houseWrapper.current.style.transform = `translateX(${translate}%)`;
-		const { incrementScore, text } = this.calculateWinner();
+		const inMobileView = window.matchMedia("(max-width: 590px)").matches;
+
+		if (!inMobileView) {
+			const translate = 7;
+			this.userWrapper.current.style.transform = `translateX(-${translate}%)`;
+			this.houseWrapper.current.style.transform = `translateX(${translate}%)`;
+		}
+
+		const { incrementScore, text, win, lose } = this.calculateWinner();
 		this.setState({ showResult: true, resultText: text });
+
+		const winnerContainer = win
+			? this.userWrapper.current.getElementsByClassName("result__buttonWrapper")
+			: lose
+			? this.houseWrapper.current.getElementsByClassName("result__buttonWrapper")
+			: null;
+
+		if (winnerContainer)
+			winnerContainer[0].classList.add("result__buttonWrapper--winner");
+
 		if (incrementScore) this.props.incrementScore();
 	}
 
@@ -50,10 +64,14 @@ class Result extends Component {
 
 	calculateWinner() {
 		if (this.props.selectedButton == this.houseSelection)
-			return { text: "DRAW", incrementScore: false };
+			return { text: "DRAW", incrementScore: false, win: false, lose: false };
 		else if (gameWinnerMap[this.props.selectedButton] == this.houseSelection)
-			return { text: "YOU WIN", incrementScore: true };
-		else return { text: "YOU LOSE", incrementScore: false };
+			return { text: "YOU WIN", incrementScore: true, win: true, lose: false };
+		else return { text: "YOU LOSE", incrementScore: false, win: false, lose: true };
+	}
+
+	componentDidMount() {
+		setTimeout(() => this.props.showOverflow(), 600);
 	}
 
 	render() {
@@ -87,7 +105,7 @@ class Result extends Component {
 			<section className={"result " + mainAnimationsClasses}>
 				<div className="result__wrapper" ref={this.userWrapper}>
 					<h3 className="result__subtitle">YOU PICKED</h3>
-					<div className="result__buttonWrapper result__buttonWrapper--user">
+					<div className={"result__buttonWrapper result__buttonWrapper--user"}>
 						{userSelectionButton}
 					</div>
 				</div>

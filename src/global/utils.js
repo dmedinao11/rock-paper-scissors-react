@@ -6,7 +6,6 @@ export class ScoreController {
 
 	increment() {
 		++this.score;
-		console.warn(this.score);
 		localStorage.setItem(this.lsKey, this.score.toString());
 	}
 }

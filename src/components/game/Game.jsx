@@ -6,7 +6,7 @@ class Game extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isSelecting: true,
+			isSelecting: false,
 			onChangeToResult: false,
 			userSelection: null,
 			onChangeToSelection: false,
@@ -46,7 +46,7 @@ class Game extends Component {
 			/>
 		) : (
 			<Result
-				selectedButton={this.state.userSelection}
+				selectedButton={this.state.userSelection || 0}
 				showOverflow={this.props.showOverflow}
 				hideOverflow={this.props.hideOverflow}
 				incrementScore={this.props.incrementScore}

@@ -92,3 +92,40 @@
 		transform: scale(1.2);
 	}
 }
+
+@media only screen and (max-width: 780px) {
+	.rpsButton {
+		border: 1rem solid;
+	}
+
+	.rpsButton--selection {
+		height: 135px;
+		width: 135px;
+		cursor: pointer;
+	}
+
+	.rpsButton--result--allButtons {
+		height: 140px;
+		width: 140px;
+	}
+
+	.rpsButton--paper {
+		border-color: #5672f7;
+		box-shadow: 0 7px 0 #2945c2;
+	}
+	.rpsButton--rock {
+		border-color: #dd3755;
+		box-shadow: 0 7px 0 #9d1630;
+	}
+	.rpsButton--scissor {
+		border-color: #eda722;
+		box-shadow: 0 7px 0 #c76c1a;
+	}
+}
+
+@media only screen and (max-width: 590px) {
+	.rpsButton--result--allButtons {
+		height: 110px;
+		width: 110px;
+	}
+}
