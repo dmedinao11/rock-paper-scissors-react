@@ -2,7 +2,7 @@
 import React from "react";
 
 //Assets
-import logo from "../../../images/logo.svg";
+import logo from "../../images/logo.svg";
 
 //Components
 import "./Score.css";

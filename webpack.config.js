@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const path = require("path");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	entry: "./src/index.js",
@@ -21,7 +22,7 @@ module.exports = {
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				loader: "file-loader",
 				options: {
-					name: "[path][name].[ext]"
+					name: "images/[name].[ext]"
 				}
 			}
 		]
@@ -29,14 +30,17 @@ module.exports = {
 	resolve: { extensions: ["*", ".js", ".jsx"] },
 	output: {
 		path: path.resolve(__dirname, "build/"),
-		publicPath: "/build/",
 		filename: "bundle.js"
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "public/"),
 		port: 3000,
-		publicPath: "http://localhost:3000/build/",
+		publicPath: "http://localhost:3000",
 		hotOnly: true
 	},
-	plugins: [new webpack.HotModuleReplacementPlugin()]
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			template: "src/index.html"
+		})
+	]
 };

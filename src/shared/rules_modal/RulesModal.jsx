@@ -4,8 +4,8 @@ import Modal from "react-modal";
 import "./RulesModal.css";
 
 //Assets
-import closeIcon from "../../../images/icon-close.svg";
-import rulesImg from "../../../images/image-rules.svg";
+import closeIcon from "../../images/icon-close.svg";
+import rulesImg from "../../images/image-rules.svg";
 
 class RulesModal extends Component {
 	constructor(props) {

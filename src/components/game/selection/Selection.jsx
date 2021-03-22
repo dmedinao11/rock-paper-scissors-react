@@ -3,7 +3,7 @@ import React from "react";
 
 //Assets
 import "./Selection.css";
-import triangle from "../../../../images/bg-triangle.svg";
+import triangle from "../../../images/bg-triangle.svg";
 
 //Components
 import RpsButton from "../../../shared/rps_button/RpsButton";

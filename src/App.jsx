@@ -3,6 +3,7 @@ import React, { Component } from "react";
 
 //Assets
 import "animate.css";
+import "./images/favicon.png";
 
 //Components
 import "./App.css";
