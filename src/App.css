@@ -25,8 +25,9 @@ main {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	min-height: 100vh;
+	min-height: 640px;
 	min-width: 44rem;
+	height: 100vh;
 	padding: 3rem 0;
 	position: relative;
 }
