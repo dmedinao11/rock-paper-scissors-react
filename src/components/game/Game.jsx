@@ -9,7 +9,7 @@ class Game extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isSelecting: false,
+			isSelecting: true,
 			onChangeToResult: false,
 			userSelection: null,
 			onChangeToSelection: false,
@@ -19,6 +19,7 @@ class Game extends Component {
 		this.handlePlayAgain = this.handlePlayAgain.bind(this);
 	}
 
+	//Handlers
 	handleUserSelection(itemIndex) {
 		this.setState({ onChangeToResult: true, firstSelectionEntrance: false });
 		setTimeout(
