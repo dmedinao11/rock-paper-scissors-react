@@ -1,7 +1,14 @@
+//Core
 import React from "react";
+
+//Assets
 import "./Selection.css";
-import RpsButton from "../../../shared/rps_button/RpsButton";
 import triangle from "../../../../images/bg-triangle.svg";
+
+//Components
+import RpsButton from "../../../shared/rps_button/RpsButton";
+
+//Constants
 import { buttons } from "../../../global/constants";
 
 export const Selection = (props) => {

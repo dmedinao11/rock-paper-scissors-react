@@ -1,22 +1,42 @@
+//Core
 import React, { Component, createRef } from "react";
+
+//Assets
 import "./Result.css";
+
+//Constants
 import { buttons, gameWinnerMap } from "../../../global/constants";
+
+//Components
 import RpsButton from "../../../shared/rps_button/RpsButton";
 
 class Result extends Component {
 	constructor(props) {
 		super(props);
 		this.randomButtons = this.getRandomButtons();
-		this.state = { showResult: false, resultText: "" };
-		this.buttonsContainer = createRef();
+
 		this.userWrapper = createRef();
 		this.houseWrapper = createRef();
+		this.buttonsContainer = createRef();
+
+		this.state = { showResult: false, resultText: "" };
+
 		this.handleCarrouselEnd = this.handleCarrouselEnd.bind(this);
 		this.handleSelectionEnd = this.handleSelectionEnd.bind(this);
 		this.getRandomButtons = this.getRandomButtons.bind(this);
 		this.calculateWinner = this.calculateWinner.bind(this);
 	}
 
+	//Lifecycle
+	componentWillUnmount() {
+		this.props.hideOverflow();
+	}
+
+	componentDidMount() {
+		setTimeout(() => this.props.showOverflow(), 600);
+	}
+
+	//Handlers
 	handleCarrouselEnd() {
 		const buttons = Array.from(this.buttonsContainer.current.children);
 		const houseButton = buttons.pop();
@@ -49,10 +69,7 @@ class Result extends Component {
 		if (incrementScore) this.props.incrementScore();
 	}
 
-	componentWillUnmount() {
-		this.props.hideOverflow();
-	}
-
+	//Utilities
 	getRandomButtons() {
 		const randomButtons = buttons
 			.map((button) => ({ ...button, random: Math.random() }))
@@ -68,10 +85,6 @@ class Result extends Component {
 		else if (gameWinnerMap[this.props.selectedButton] == this.houseSelection)
 			return { text: "YOU WIN", incrementScore: true, win: true, lose: false };
 		else return { text: "YOU LOSE", incrementScore: false, win: false, lose: true };
-	}
-
-	componentDidMount() {
-		setTimeout(() => this.props.showOverflow(), 600);
 	}
 
 	render() {

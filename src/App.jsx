@@ -1,10 +1,14 @@
+//Core
 import React, { Component } from "react";
-import "./App.css";
 import "animate.css";
 
+//Components
+import "./App.css";
 import { Score } from "./components/score/Score";
 import Game from "./components/game/Game";
 import RulesModal from "./shared/rules_modal/RulesModal";
+
+//Utilities
 import { ScoreController } from "./global/utils";
 
 class App extends Component {
@@ -22,6 +26,7 @@ class App extends Component {
 		this.handleIncrementScore = this.handleIncrementScore.bind(this);
 	}
 
+	//Handlers
 	handleIncrementScore() {
 		this.scoreController.increment();
 		this.setState({ score: this.scoreController.score });

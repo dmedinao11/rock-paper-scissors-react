@@ -1,4 +1,7 @@
+//Core
 import React, { Component } from "react";
+
+//Components
 import { Selection } from "./selection/Selection";
 import Result from "./result/Result";
 

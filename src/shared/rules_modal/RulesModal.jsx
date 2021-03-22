@@ -1,7 +1,9 @@
+//Core
 import React, { Component } from "react";
+import Modal from "react-modal";
 import "./RulesModal.css";
 
-import Modal from "react-modal";
+//Assets
 import closeIcon from "../../../images/icon-close.svg";
 import rulesImg from "../../../images/image-rules.svg";
 
