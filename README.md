@@ -54,7 +54,7 @@ _Abre en tu navegador http://localhost:3000/ y listo!_
 - [Webpack](https://webpack.js.org/) - Empaquetador de módulos
 - [Animate.css](https://animate.style/) - Librería de CSS para el uso de animaciones
 
-## Autore ✒️
+## Autor ✒️
 
 - **Daniel Medina** - _Desarrollo_ - [dmedinao11](https://github.com/dmedinao11)
 
