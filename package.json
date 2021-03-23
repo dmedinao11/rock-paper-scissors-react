@@ -5,7 +5,6 @@
 	"main": "index.js",
 	"homepage": "https://dmedinao11.github.io/rock-paper-scissors-react",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "webpack serve",
 		"build": "webpack b",
 		"predeploy": "npm run build",
