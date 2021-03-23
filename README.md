@@ -3,6 +3,16 @@
 _Reto 'rock paper scissors' propuesto en
 [Frontendmentor.io](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)_
 
+## Previsualización 👀
+
+### Escritorio 🖥
+
+![Desktop vista](https://raw.githubusercontent.com/dmedinao11/rock-paper-scissors-react/master/preview/desktop.png)
+
+### Móvil 📱
+
+![Mobile vista](https://raw.githubusercontent.com/dmedinao11/rock-paper-scissors-react/master/preview/mobile.png)
+
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu
